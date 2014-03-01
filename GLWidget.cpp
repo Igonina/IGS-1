@@ -1,8 +1,7 @@
 #include <QtGui>
  #include <QtOpenGL>
 
- #include "glwidget.h"
-
+#include "GLWidget.h"
  GLWidget::GLWidget(QWidget *parent, QGLWidget *shareWidget)
      : QGLWidget(parent, shareWidget)
  {
@@ -190,7 +189,7 @@
 
      for (int j=0; j < 6; ++j) {
          textures[j] = bindTexture
-             (QPixmap(QString(":/images/side%1.png").arg(j + 1)), GL_TEXTURE_2D);
+             (QPixmap(QString(":/images/side%1.jpg").arg(j + 1)), GL_TEXTURE_2D);
      }
 
      for (int i = 0; i < 6; ++i) {

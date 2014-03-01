@@ -1,33 +1,27 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QWidget>
 
-namespace Ui {
-class MainWindow;
-}
+ class GLWidget;
 
-class MainWindow : public QMainWindow
-{
-    Q_OBJECT
-    
-public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
-    
-private:
-    Ui::MainWindow *ui;
+ class MainWindow : public QWidget
+ {
+     Q_OBJECT
 
+ public:
+     MainWindow();
 
-private slots:
-    void setCurrentGlWidget();
-    void rotateOneStep();
+ private slots:
+     void setCurrentGlWidget();
+     void rotateOneStep();
 
-private:
-     enum { NumRows = 2, NumColumns = 3 };
+ private:
+     enum { NumRows = 2, NumColumns = 2 };
 
      GLWidget *glWidgets[NumRows][NumColumns];
      GLWidget *currentGlWidget;
-};
+ };
+
 
 #endif // MAINWINDOW_H
